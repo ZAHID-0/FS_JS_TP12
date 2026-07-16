@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chat en Temps Réel</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="chat-container">
+    <header class="chat-header">
+      <h1>Chat Socket.IO</h1>
+      <div id="room-name"></div>
+      <button id="leave-btn">Quitter</button>
+    </header>
+    
+    <main class="chat-main">
+      <div class="chat-sidebar">
+        <h3>Utilisateurs</h3>
+        <ul id="users"></ul>
+      </div>
+      <div class="chat-messages" id="chat-messages"></div>
+    </main>
+    
+    <div class="chat-form-container">
+      <form id="chat-form">
+        <input
+          id="msg"
+          type="text"
+          placeholder="Entrez votre message..."
+          required
+          autocomplete="off"
+        />
+        <button class="btn">Envoyer</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="join-container" id="join-container">
+    <header class="join-header">
+      <h1>Chat Socket.IO</h1>
+    </header>
+    <main class="join-main">
+      <form id="join-form">
+        <div class="form-control">
+          <label for="username">Nom d'utilisateur</label>
+          <input
+            type="text"
+            name="username"
+            id="username"
+            placeholder="Entrez votre nom..."
+            required
+          />
+        </div>
+        <div class="form-control">
+          <label for="room">Salon</label>
+          <select name="room" id="room">
+            <option value="Général">Général</option>
+            <option value="Technologie">Technologie</option>
+            <option value="Musique">Musique</option>
+            <option value="Sports">Sports</option>
+            <option value="Jeux">Jeux</option>
+          </select>
+        </div>
+        <button type="submit" class="btn">Rejoindre</button>
+      </form>
+    </main>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="js/client.js"></script>
+</body>
+</html>
